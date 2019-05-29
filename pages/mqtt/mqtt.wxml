@@ -1,0 +1,12 @@
+<!--index.wxml-->
+
+<view class="row">
+    <navigator wx:for="{{items}}" url="{{item.url}}">
+        <view class="item_size">
+            <image class="img" src="{{item.src}}"></image>
+            <text class="text">{{item.text}}</text>
+        </view>
+    </navigator>
+
+</view>
+
