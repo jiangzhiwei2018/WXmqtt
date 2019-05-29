@@ -5,8 +5,8 @@ var app = getApp()
 var clients=null;
 Page({
   data: {
-    subscribe:'/a1ioaELpsed/test/user/cha/dy',
-    publish:'/a1ioaELpsed/test/user/chat2/fb',
+    subscribe:'订阅的主题',
+    publish:'发布的主题',
     type:0,
     scrollTop:0,
     motto: 'Hello World',
@@ -19,15 +19,15 @@ Page({
     }],
     userInfo: {},
     deviceConfig :{
-      productKey: "a1ioaELpsed",
-      deviceName: "test",
-      deviceSecret: "ejPlHPPXPyTMdpHa3nYjxq9zdkKfa21b",
-      regionId: "cn-shanghai"
-    },
-    deviceConfig2: {
-      productKey: "a1ioaELpsed",
-      deviceName: "test2",
-      deviceSecret: "yJZZsFp2pJZ2RGy9JE8we1RrS9LpJ2Ls",
+      productKey: "自己填",
+      deviceName: "自己填",
+      deviceSecret: "自己填",
+      regionId: "cn-shanghai"//根据地区填，我的服务器地区在上海
+        },
+    deviceConfig2: {//这里我创建了2个设备不需要可忽略
+      productKey: "",
+      deviceName: "",
+      deviceSecret: "",
       regionId: "cn-shanghai"
     }
   },
@@ -69,7 +69,7 @@ Page({
     const options = this.initMqttOptions(deviceConfig);
     console.log(options)
     //替换productKey为你自己的产品的
-    const client = mqtt.connect('wxs://a1ioaELpsed.iot-as-mqtt.cn-shanghai.aliyuncs.com', options);
+    const client = mqtt.connect('wxs://(这里产品productKey自己填).iot-as-mqtt.cn-shanghai.aliyuncs.com', options);
     client.on('connect', function () {
       console.log('连接服务器成功')
       //订阅主题，替换productKey和deviceName
